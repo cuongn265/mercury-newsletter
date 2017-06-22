@@ -17,6 +17,6 @@ gulp.task('make', function () {
  
     return gulp.src('src/body.handlebars')
         .pipe(handlebars(templateData, options))
-        .pipe(rename('body.html'))
+        .pipe(rename('newsletter.html'))
         .pipe(gulp.dest('dist'));
 });
