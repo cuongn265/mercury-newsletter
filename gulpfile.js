@@ -4,13 +4,9 @@ var rename = require('gulp-rename');
  
 gulp.task('make', function () {
     var templateData = {
-        firstName: 'Kaanon'
+        firstName: 'Eugene'
     },
     options = {
-        ignorePartials: true, //ignores the unknown footer2 partial in the handlebars template, defaults to false 
-        partials : {
-            footer : '<footer>the end</footer>'
-        },
         batch : ['./src/partials'],
         helpers : {
             capitals : function(str){
@@ -19,8 +15,8 @@ gulp.task('make', function () {
         }
     }
  
-    return gulp.src('src/hello.handlebars')
+    return gulp.src('src/body.handlebars')
         .pipe(handlebars(templateData, options))
-        .pipe(rename('hello.html'))
+        .pipe(rename('body.html'))
         .pipe(gulp.dest('dist'));
 });
